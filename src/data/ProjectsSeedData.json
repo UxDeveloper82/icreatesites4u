@@ -1,0 +1,19 @@
+[
+  {
+      "id": "1",
+      "name": "Friend-App",
+      "photoUrl":"Friendsite"
+  },
+  {
+    "id": "2",
+    "name": "Repair-App",
+    "photoUrl":"orrepair"
+  },
+  {
+    "id": "3",
+    "name": "Inventory-App",
+    "photoUrl":"Inventory"
+}
+
+
+]

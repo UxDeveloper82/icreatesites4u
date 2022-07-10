@@ -1,0 +1,73 @@
+<nav class="navbar navbar-expand-md navbar-toggleable-sm navbar-light bg-light">
+  <div class="container">
+    <a [routerLink]="['/']" routerLinkActive="router-link-active"
+      class="navbar-brand text-uppercase font-weight-bold"
+      ><span style="color: red">Icreate</span>sites4u</a
+    >
+    <button
+      class="navbar-toggler"
+      type="button"
+      (click)="toggleNavbar()"
+      data-toggle="collapse"
+      data-target="#navbarsExampleDefault"
+      aria-controls="navbarsExampleDefault"
+      aria-expanded="false"
+      aria-label="Toggle navigation"
+    >
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div
+      class="navbar-collapse collapse d-lg-inline-flex justify-content-between"
+      id="navbarsExampleDefault" [ngClass]="{'show': navbarOpen}"
+    >
+      <ul class="navbar-nav flex-grow-1">
+        <li class="nav-item">
+          <a
+            class="nav-link"
+            routerLink="/videos"
+            >My-Videos</a
+          >
+        </li>
+        <li class="nav-item">
+          <a
+            class="nav-link"
+            asp-area="UI"
+            asp-controller="Post"
+            asp-action="Index"
+            >My-Blog</a
+          >
+        </li>
+        <li class="nav-item">
+          <a
+            class="nav-link"
+            routerLink="/projects"
+            >Projects</a
+          >
+        </li>
+        <li class="nav-item">
+          <a
+             class="nav-link"
+             routerLink="/contact"
+            >Contact</a
+          >
+        </li>
+      </ul>
+      <ul class="navbar-nav">
+        <li class="nav-item">
+          <a
+             class="nav-link"
+             routerLink="/login"
+            >Login</a
+          >
+        </li>
+        <li class="nav-item">
+          <a
+             class="nav-link"
+             routerLink="/register"
+            >Register</a
+          >
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
