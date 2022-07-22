@@ -1,13 +1,19 @@
 import { Injectable } from '@angular/core';
 import { AngularFireAuth } from '@angular/fire/compat/auth';
+import firebase from 'firebase/compat/app';
 import { GoogleAuthProvider } from '@angular/fire/auth';
 import { Router } from '@angular/router';
+import { Observable } from 'rxjs';
 
 @Injectable({
   providedIn: 'root',
 })
 export class AuthService {
-  constructor(private fireauth: AngularFireAuth, private router: Router) {}
+   user$: Observable<firebase.User>;
+
+  constructor(private fireauth: AngularFireAuth, private router: Router) {
+    this.user$ = fireauth.authState;
+  }
 
   //Login method
   login(email: string, password: string) {

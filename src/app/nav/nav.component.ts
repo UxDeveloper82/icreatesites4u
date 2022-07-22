@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { AuthService } from '../_services/auth.service';
 
 @Component({
   selector: 'app-nav',
@@ -7,14 +8,23 @@ import { Component, OnInit } from '@angular/core';
 })
 export class NavComponent implements OnInit {
   navbarOpen = false;
+  
 
-  constructor() { }
+  constructor(public auth: AuthService) { }
 
   ngOnInit(): void {
   }
 
   toggleNavbar() {
      this.navbarOpen = !this.navbarOpen;
+  }
+
+  login() {
+    this.auth.googleSignIn();
+  }
+
+  logout() {
+    this.auth.logout();
   }
 
 }
