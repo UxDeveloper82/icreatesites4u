@@ -9,12 +9,13 @@ import { ProjectsComponent } from './projects/projects.component';
 import { RegisterComponent } from './register/register.component';
 import { VerifyEmailComponent } from './verify-email/verify-email.component';
 import { VideosComponent } from './videos/videos.component';
+import { AuthGuard } from './_services/auth.guard';
 
 const routes: Routes = [
   { path: '', component: HomeComponent},
   { path: 'login', component: LoginComponent},
   { path: 'register', component: RegisterComponent},
-  { path: 'dashboard', component: DashboardComponent},
+  { path: 'dashboard', component: DashboardComponent, canActivate: [AuthGuard]},
   {path: 'verify-email', component : VerifyEmailComponent},
   {path: 'forgot-password', component : ForgotPasswordComponent},
   { path: 'projects', component: ProjectsComponent},
